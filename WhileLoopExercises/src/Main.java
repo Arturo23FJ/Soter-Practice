@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        multiplicationTableForANumber();
+        System.out.println(factorialCounter());
     }
 
     public static void multiplicationTableForANumber(){
@@ -15,5 +15,18 @@ public class Main {
             System.out.println(index + " * " + number + " = " + index * number);
             ++index;
         }
+    }
+
+    public static int factorialCounter(){
+        System.out.println("Please enter a number!");
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+
+        int count = 1;
+        while (number > 0){
+            count *= number;
+            --number;
+        }
+        return count;
     }
 }
