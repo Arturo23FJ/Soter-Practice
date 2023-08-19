@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(checkIfEven(3));
+        System.out.println(checkNegPosZero(-3));
     }
 
     public static String checkIfEven(int num){
@@ -8,5 +8,14 @@ public class Main {
             return "Even";
         }
         return "Odd";
+    }
+
+    public static String checkNegPosZero(int num){
+        if(num < 0){
+            return "Negative";
+        } else if(num > 0){
+            return "Positive";
+        }
+        return "Zero";
     }
 }
