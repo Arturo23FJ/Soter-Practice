@@ -2,19 +2,18 @@ public class Car {
     private String type;
     private int speed;
     private int direction;
+    private int price;
 
-    Car(String type, int speed, int direction) {
+    Car(String type, int speed, int direction, int price) {
         this.type = type;
-        if (speed < 0) {
-            this.speed = 0;
-        } else {
-            this.speed = speed;
-        }
+        this.speed = Math.max(speed, 0);
         this.direction = Math.abs(direction % 360);
+        this.price = Math.max(price, 0);
     }
 
     public String toString() {
-        return "Type: " + type + ", Speed: " + speed + ", Direction: " + direction;
+        return "Type: " + this.type + ", Speed: " + this.speed + ", Direction: " + this.direction
+                + ", Price: " + this.price;
     }
 
     public String getType() {
@@ -30,11 +29,7 @@ public class Car {
     }
 
     public void setSpeed(int speed) {
-        if (speed < 0) {
-            this.speed = 0;
-        } else {
-            this.speed = speed;
-        }
+        this.speed = Math.max(speed, 0);
     }
 
     public void setDirection(int direction) {
@@ -46,5 +41,13 @@ public class Car {
 
     public int getDirection() {
         return this.direction;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = Math.max(price, 0);
     }
 }
