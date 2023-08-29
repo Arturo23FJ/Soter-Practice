@@ -4,15 +4,8 @@ public class Main {
                                 new Car("Alfa Romeo", new int[]{170, 890, 1400, 600}),
                                 new Car("Mitsubishi", new int[]{190, 910, 1540, 1150})};
 
-        System.out.println("The price of the cars is: " + priceOfAllCars(cars));
-    }
+        CarDealership carDealership = new CarDealership(cars);
 
-    public static int priceOfAllCars(Car[] cars){
-        int sum = 0;
-
-        for (Car car : cars) {
-            sum += car.priceOfCar();
-        }
-        return sum;
+        System.out.println("The price of the cars in the dealership is: " + carDealership.priceOfAllCars());
     }
 }
