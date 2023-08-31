@@ -1,2 +1,8 @@
-package shapes;public class Shape {
+package shapes;
+
+public interface Shape {
+
+    double perimeter();
+    double area();
+    String whatAmI();
 }
