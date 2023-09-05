@@ -17,15 +17,15 @@ public class Main {
         whoWins(computer, player);
     }
 
-    public static void whoWins(Player computer, Player player){
+    public static void whoWins(Player computer, Player player) {
         String computerChoice = computer.randomChoice();
         String playerChoice = player.setChoiceByInput();
 
-        if (computerChoice.equals(playerChoice)){
+        if (computerChoice.equals(playerChoice)) {
             System.out.println("Draw! Player chose: " + playerChoice + ", Computer chose: " + computerChoice);
         } else if ((computerChoice.equals("Rock") && playerChoice.equals("Scissors")) ||
                 (computerChoice.equals("Paper") && playerChoice.equals("Rock")) ||
-                (computerChoice.equals("Scissors") && playerChoice.equals("Paper"))){
+                (computerChoice.equals("Scissors") && playerChoice.equals("Paper"))) {
             System.out.println("Computer wins! Computer chose " + computerChoice +
                     ", Player chose: " + playerChoice);
         } else {

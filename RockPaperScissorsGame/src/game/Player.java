@@ -1,5 +1,6 @@
 package game;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,11 +9,10 @@ public class Player {
 
     public Player() {}
 
-
-    private String choices(int choice){
-        if (choice == 0){
+    private String choices(int choice) {
+        if (choice == 0) {
             return this.choice = "Rock";
-        } else if(choice == 1){
+        } else if(choice == 1) {
             return this.choice = "Paper";
         } else
             return this.choice = "Scissors";
@@ -25,19 +25,17 @@ public class Player {
         return choices(numberOfChoice);
     }
 
-    public String setChoiceByInput(){
+    public String setChoiceByInput() {
         System.out.println("Please enter your choice! 0 = Rock, 1 = Paper, 2 = Scissors");
         Scanner scanner = new Scanner(System.in);
         int inputChoice = scanner.nextInt();
         String choice = "";
 
-        if(inputChoice < 0 || inputChoice > 2) {
-            System.out.println("Please write a valid choice! 0 = Rock, 1 = Paper, 2 = Scissors");
+        if (inputChoice < 0 || inputChoice > 2) {
+            System.out.println("Please enter a valid choice! 0 = Rock, 1 = Paper, 2 = Scissors");
             scanner.hasNextInt();
         }
         choice = choices(inputChoice);
-
         return choice;
     }
-
 }
