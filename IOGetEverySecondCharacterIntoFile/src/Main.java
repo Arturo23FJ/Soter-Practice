@@ -14,6 +14,8 @@ public class Main {
             while ((character = fr.read()) != -1){
                 if((characterCount % 2) == 0) {          //Getting every second character with the remainder operator
                     fw.write((char)character);          //Converting the type int character to char and writing it to another text file
+                } else if(character == '\n'){
+                    fw.write(System.lineSeparator());   //Adding line separators in case there are multiple lines in our text file
                 }
                 ++characterCount;   //Incrementing the character count to get the next one
             }
