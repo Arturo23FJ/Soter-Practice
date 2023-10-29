@@ -2,16 +2,18 @@ import java.util.concurrent.Callable;
 
 public class FactorialCallable implements Callable<Long> {
 
-    Byte limit;
+    Byte from;
+    Byte until;
 
-    public FactorialCallable(Byte limit) {
-        this.limit = limit;
+    public FactorialCallable(Byte from, Byte until) {
+        this.from = from;
+        this.until = until;
     }
 
     @Override
     public Long call() throws Exception {
         long result = 1;
-        for (int i = 1; i <= limit; i++) {
+        for (int i = from; i <= until; i++) {
             result *= i;
         }
         return result;
